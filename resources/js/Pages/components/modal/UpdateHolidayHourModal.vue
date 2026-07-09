@@ -57,35 +57,35 @@
                                         ?? null
                                 }">
                                 <HiddenElement name="business_hour_uuid" :meta="true" />
-                                <StaticElement name="h4" tag="h4" content="Update Holiday" />
+                                <StaticElement name="h4" tag="h4" content="Actualizar feriado" />
                                 <SelectElement name="holiday_type" :items="[
                                     {
                                         value: 'us_holiday',
-                                        label: 'US Holiday',
+                                        label: 'Feriado de EE. UU.',
                                     },
                                     {
                                         value: 'ca_holiday',
-                                        label: 'Canadian Holiday',
+                                        label: 'Feriado canadiense',
                                     },
                                     {
                                         value: 'uk_holiday',
-                                        label: 'UK Holiday',
+                                        label: 'Feriado del Reino Unido',
                                     },
                                     {
                                         value: 'single_date',
-                                        label: 'Single Date',
+                                        label: 'Fecha única',
                                     },
                                     {
                                         value: 'date_range',
-                                        label: 'Date Range',
+                                        label: 'Rango de fechas',
                                     },
                                     {
                                         value: 'recurring_pattern',
-                                        label: 'Recurring Pattern',
+                                        label: 'Patrón recurrente',
                                     },
-                                ]" :search="true" :native="false" label="Holiday Type" input-type="search"
+                                ]" :search="true" :native="false" label="Tipo de feriado" input-type="search"
                                     @change="handleHolidayTypeChange" autocomplete="off"
-                                    placeholder="Select Holiday Type" :floating="false" />
+                                    placeholder="Seleccione el tipo de feriado" :floating="false" />
 
 
                                 <StaticElement name="p1" tag="p" :conditions="[
@@ -108,8 +108,8 @@
                                             </div>
 
                                             <div class="ml-3">
-                                                Choose from the list of holidays. Each selection automatically
-                                                applies the exception on that exact holiday date.
+                                                Elija de la lista de feriados. Cada selección aplica automáticamente
+                                                la excepción en esa fecha exacta del feriado.
 
                                             </div>
                                         </div>
@@ -136,9 +136,9 @@
 
                                             <div class="ml-3">
 
-                                                Define a holiday for one specific calendar date.
-                                                Pick your date and, if needed, enter a start and/or end time.
-                                                Leaving the time fields blank will cover the entire day from 00:00 to
+                                                Defina un feriado para una fecha específica del calendario.
+                                                Elija su fecha y, si es necesario, ingrese una hora de inicio y/o fin.
+                                                Dejar los campos de hora en blanco cubrirá todo el día de 00:00 a
                                                 23:59.
                                             </div>
                                         </div>
@@ -164,13 +164,13 @@
                                             </div>
 
                                             <div class="ml-3">
-                                                Create an exception spanning multiple days.
-                                                Select a “From” date and a “To” date, and optionally specify start/end
-                                                times
-                                                for each day.
-                                                If you leave the time fields blank, each day in the range will default
-                                                to a
-                                                full-day exception.
+                                                Cree una excepción que abarque varios días.
+                                                Seleccione una fecha “Desde” y una fecha “Hasta”, y opcionalmente especifique horas
+                                                de inicio/fin
+                                                para cada día.
+                                                Si deja los campos de hora en blanco, cada día del rango tomará por
+                                                defecto una
+                                                excepción de día completo.
                                             </div>
                                         </div>
                                     </div>
@@ -195,25 +195,25 @@
                                             </div>
 
                                             <div class="ml-3">
-                                                <strong>Understanding Recurring Patterns:</strong>
-                                                This form helps you define specific time periods based on a
-                                                <strong>recurring
-                                                    pattern</strong>.
-                                                If you set multiple options (like a specific month and a specific day of
-                                                the week), the condition will only be met when <strong>all</strong>
-                                                selected
-                                                criteria are true simultaneously.
-                                                Any field you leave blank will not restrict the condition (for example,
-                                                leaving <strong>Month</strong> blank means “every month”).
+                                                <strong>Cómo funcionan los patrones recurrentes:</strong>
+                                                Este formulario le ayuda a definir períodos de tiempo específicos basados en un
+                                                <strong>patrón
+                                                    recurrente</strong>.
+                                                Si configura varias opciones (como un mes específico y un día específico de
+                                                la semana), la condición solo se cumplirá cuando <strong>todos</strong> los
+                                                criterios
+                                                seleccionados sean verdaderos simultáneamente.
+                                                Cualquier campo que deje en blanco no restringirá la condición (por ejemplo,
+                                                dejar <strong>Mes</strong> en blanco significa “todos los meses”).
                                             </div>
                                         </div>
                                     </div>
 
                                 </StaticElement>
 
-                                <SelectElement name="us_holiday" :search="true" :native="false" label="US Holiday"
+                                <SelectElement name="us_holiday" :search="true" :native="false" label="Feriado de EE. UU."
                                     :items="usHolidays" input-type="search" autocomplete="off" :object="true"
-                                    @change="handleUSHolidayUpdate" placeholder="Select US Holiday" :floating="false"
+                                    @change="handleUSHolidayUpdate" placeholder="Seleccione el feriado de EE. UU." :floating="false"
                                     :conditions="[
                                         [
                                             'holiday_type',
@@ -224,9 +224,9 @@
                                         ],
                                     ]" />
 
-                                <SelectElement name="ca_holiday" :search="true" :native="false" label="Canadian Holiday"
+                                <SelectElement name="ca_holiday" :search="true" :native="false" label="Feriado canadiense"
                                     :submit="false" :items="caHolidays" input-type="search" autocomplete="off"
-                                    :object="true" @change="handleCAHolidayUpdate" placeholder="Select Canadian Holiday"
+                                    :object="true" @change="handleCAHolidayUpdate" placeholder="Seleccione el feriado canadiense"
                                     :floating="false" :conditions="[
                                         [
                                             'holiday_type',
@@ -237,9 +237,9 @@
                                         ],
                                     ]" />
 
-                                <SelectElement name="uk_holiday" :search="true" :native="false" label="UK Holiday"
+                                <SelectElement name="uk_holiday" :search="true" :native="false" label="Feriado del Reino Unido"
                                     :submit="false" :items="ukHolidays" input-type="search" autocomplete="off"
-                                    :object="true" @change="handleUKHolidayUpdate" placeholder="Select UK Holiday"
+                                    :object="true" @change="handleUKHolidayUpdate" placeholder="Seleccione el feriado del Reino Unido"
                                     :floating="false" :conditions="[
                                         [
                                             'holiday_type',
@@ -250,8 +250,8 @@
                                         ],
                                     ]" />
 
-                                <TextElement name="description" label="Holiday Description"
-                                    description="Enter a clear, descriptive name for this holiday (e.g. ‘Company Annual Picnic’)."
+                                <TextElement name="description" label="Descripción del feriado"
+                                    description="Ingrese un nombre claro y descriptivo para este feriado (por ejemplo, ‘Picnic anual de la empresa’)."
                                     :conditions="[
                                         [
                                             'holiday_type',
@@ -267,11 +267,11 @@
                                 <DateElement name="start_date" display-format="MMMM DD, YYYY" load-format="DD/MM/YYYY"
                                     :label="(el$) => {
                                         if (el$.form$.el$('holiday_type').value == 'single_date') {
-                                            return 'Date'
+                                            return 'Fecha'
                                         }
 
                                         if (el$.form$.el$('holiday_type').value == 'date_range') {
-                                            return 'Start Date'
+                                            return 'Fecha de inicio'
                                         }
 
                                     }" :columns="{
@@ -291,7 +291,7 @@
                                             ],
                                         ],
                                     ]" />
-                                <DateElement name="start_time" label="Start Time" :date="false" :time="true"
+                                <DateElement name="start_time" label="Hora de inicio" :date="false" :time="true"
                                     :hour24="false" value-format="HH:mm" :columns="{
                                         default: {
                                             container: 6,
@@ -318,7 +318,7 @@
                                         ],
                                     ],
                                 ]" />
-                                <DateElement name="end_date" display-format="MMMM DD, YYYY" label="End Date" :columns="{
+                                <DateElement name="end_date" display-format="MMMM DD, YYYY" label="Fecha de fin" :columns="{
                                     default: {
                                         container: 6,
                                     },
@@ -334,7 +334,7 @@
                                         ],
                                     ],
                                 ]" />
-                                <DateElement name="end_time" label="End Time" :date="false" :time="true" :hour24="false"
+                                <DateElement name="end_time" label="Hora de fin" :date="false" :time="true" :hour24="false"
                                     value-format="HH:mm" :columns="{
                                         default: {
                                             container: 6,
@@ -355,8 +355,8 @@
                                 <GroupElement name="container_1" />
 
                                 <SelectElement name="mon" :items="monthOptions" :search="true" :native="false"
-                                    input-type="search" autocomplete="off" label="Month" :strict="false"
-                                    description="Select the month of the year. Leave blank for any month."
+                                    input-type="search" autocomplete="off" label="Mes" :strict="false"
+                                    description="Seleccione el mes del año. Déjelo en blanco para cualquier mes."
                                     :floating="false" :conditions="[
                                         [
                                             'holiday_type',
@@ -367,8 +367,8 @@
                                         ],
                                     ]" />
                                 <SelectElement name="mday" :items="dayOfMonthOptions" :search="true" :native="false"
-                                    input-type="search" autocomplete="off" label="Day of Month"
-                                    description="Select the day of the month (1-31). For example, choose '15' for the 15th day of the month. Leave blank for any day."
+                                    input-type="search" autocomplete="off" label="Día del mes"
+                                    description="Seleccione el día del mes (1-31). Por ejemplo, elija '15' para el día 15 del mes. Déjelo en blanco para cualquier día."
                                     :floating="false" :conditions="[
                                         [
                                             'holiday_type',
@@ -379,8 +379,8 @@
                                         ],
                                     ]" />
                                 <SelectElement name="week" :items="weekOfYearOptions" :search="true" :native="false"
-                                    input-type="search" autocomplete="off" label="Week of Year" :strict="false"
-                                    description="Select the week of the year (1-53). Week 1 is the week containing January 1st. Leave blank for any week."
+                                    input-type="search" autocomplete="off" label="Semana del año" :strict="false"
+                                    description="Seleccione la semana del año (1-53). La semana 1 es la que contiene el 1 de enero. Déjelo en blanco para cualquier semana."
                                     :floating="false" :conditions="[
                                         [
                                             'holiday_type',
@@ -391,9 +391,9 @@
                                         ],
                                     ]" />
                                 <SelectElement name="mweek" :items="weekOfMonthOptions" :search="true" :native="false"
-                                    input-type="search" autocomplete="off" label="Week of Month" :strict="false"
-                                    description="Select the occurrence of a weekday within the month. For example, to specify the 2nd Friday of the month, select '2' here and 'Friday' in the 'Day of Week' field. 
-                                    '6' specifically means the last occurrence of the chosen weekday in the month. Leave blank for any week of the month."
+                                    input-type="search" autocomplete="off" label="Semana del mes" :strict="false"
+                                    description="Seleccione la ocurrencia de un día de la semana dentro del mes. Por ejemplo, para especificar el 2do viernes del mes, seleccione '2' aquí y 'Viernes' en el campo 'Día de la semana'. 
+                                    '6' significa específicamente la última ocurrencia del día de la semana elegido en el mes. Déjelo en blanco para cualquier semana del mes."
                                     :floating="false" :conditions="[
                                         [
                                             'holiday_type',
@@ -404,8 +404,8 @@
                                         ],
                                     ]" />
                                 <SelectElement name="wday" :items="dayOfWeekOptions" :search="true" :native="false"
-                                    input-type="search" autocomplete="off" label="Day of Week" :strict="false"
-                                    description="Select the day of the week. This is often used in conjunction with 'Week of Month'. Leave blank for any day of the week."
+                                    input-type="search" autocomplete="off" label="Día de la semana" :strict="false"
+                                    description="Seleccione el día de la semana. Esto se usa a menudo junto con 'Semana del mes'. Déjelo en blanco para cualquier día de la semana."
                                     :floating="false" :conditions="[
                                         [
                                             'holiday_type',
@@ -418,12 +418,12 @@
 
 
                                 <StaticElement name="action_header" tag="p"
-                                    content="Define how incoming calls are handled during this holiday."
+                                    content="Defina cómo se gestionan las llamadas entrantes durante este feriado."
                                     :conditions="[['holiday_type', '!=', null],]" />
 
                                 <SelectElement name="action" :items="options.routing_types" label-prop="name"
-                                    :search="true" :native="false" label="Choose Action" input-type="search"
-                                    autocomplete="off" placeholder="Choose Action" :floating="false" :strict="false"
+                                    :search="true" :native="false" label="Elegir acción" input-type="search"
+                                    autocomplete="off" placeholder="Elegir acción" :floating="false" :strict="false"
                                     :columns="{ sm: { container: 6, }, }" @change="(newValue, oldValue, el$) => {
                                         let target = el$.form$.el$('target')
 
@@ -463,8 +463,8 @@
                                         // emits('error', error);
                                         return [];  // Return an empty array in case of error
                                     }
-                                }" :search="true" label-prop="name" :native="false" label="Target" input-type="search"
-                                    allow-absent :object="true" autocomplete="off" placeholder="Choose Target"
+                                }" :search="true" label-prop="name" :native="false" label="Destino" input-type="search"
+                                    allow-absent :object="true" autocomplete="off" placeholder="Elegir destino"
                                     :floating="false" :strict="false" :columns="{ sm: { container: 6, }, }" :conditions="[
                                         ['action', 'not_empty'],
                                         ['action', 'not_in', ['check_voicemail', 'company_directory', 'hangup']]
@@ -472,11 +472,11 @@
 
 
                                 <GroupElement name="container_3" />
-                                <ButtonElement name="reset" button-label="Cancel" :secondary="true" :resets="true"
+                                <ButtonElement name="reset" button-label="Cancelar" :secondary="true" :resets="true"
                                     @click="emits('close')" :columns="{
                                         container: 6,
                                     }" />
-                                <ButtonElement name="submit" button-label="Save" :submits="true" align="right" :columns="{
+                                <ButtonElement name="submit" button-label="Guardar" :submits="true" align="right" :columns="{
                                     container: 6,
                                 }" />
                             </Vueform>
@@ -567,7 +567,7 @@ const handleError = (error, details, form$) => {
         case 'prepare':
             console.log(error) // Error object
 
-            form$.messageBag.append('Could not prepare form')
+            form$.messageBag.append('No se pudo preparar el formulario')
             break
 
         // Error occured because response status is outside of 2xx
@@ -587,14 +587,14 @@ const handleError = (error, details, form$) => {
         case 'cancel':
             console.log(error) // Error object
 
-            form$.messageBag.append('Request cancelled')
+            form$.messageBag.append('Solicitud cancelada')
             break
 
         // Some other errors happened (no response object)
         case 'other':
             console.log(error) // Error object
 
-            form$.messageBag.append('Couldn\'t submit form')
+            form$.messageBag.append('No se pudo enviar el formulario')
             break
     }
 }
@@ -685,18 +685,18 @@ const handleUKHolidayUpdate = (newValue, oldValue, el$) => {
 
 // Month (1=Jan … 12=Dec)
 const monthOptions = [
-    { value: '1', label: 'January' },
-    { value: '2', label: 'February' },
-    { value: '3', label: 'March' },
-    { value: '4', label: 'April' },
-    { value: '5', label: 'May' },
-    { value: '6', label: 'June' },
-    { value: '7', label: 'July' },
-    { value: '8', label: 'August' },
-    { value: '9', label: 'September' },
-    { value: '10', label: 'October' },
-    { value: '11', label: 'November' },
-    { value: '12', label: 'December' },
+    { value: '1', label: 'Enero' },
+    { value: '2', label: 'Febrero' },
+    { value: '3', label: 'Marzo' },
+    { value: '4', label: 'Abril' },
+    { value: '5', label: 'Mayo' },
+    { value: '6', label: 'Junio' },
+    { value: '7', label: 'Julio' },
+    { value: '8', label: 'Agosto' },
+    { value: '9', label: 'Septiembre' },
+    { value: '10', label: 'Octubre' },
+    { value: '11', label: 'Noviembre' },
+    { value: '12', label: 'Diciembre' },
 ];
 
 // Day of Month (1–31)
@@ -713,224 +713,224 @@ const weekOfYearOptions = Array.from({ length: 53 }, (_, i) => ({
 
 // Week of Month (1=first … 5=fifth, 6=last)
 const weekOfMonthOptions = [
-    { value: '1', label: '1 (First)' },
-    { value: '2', label: '2 (Second)' },
-    { value: '3', label: '3 (Third)' },
-    { value: '4', label: '4 (Fourth)' },
-    { value: '5', label: '5 (Fifth)' },
-    { value: '6', label: '6 (Last)' },
+    { value: '1', label: '1 (Primera)' },
+    { value: '2', label: '2 (Segunda)' },
+    { value: '3', label: '3 (Tercera)' },
+    { value: '4', label: '4 (Cuarta)' },
+    { value: '5', label: '5 (Quinta)' },
+    { value: '6', label: '6 (Última)' },
 ];
 
 // Day of Week (1=Sunday … 7=Saturday)
 const dayOfWeekOptions = [
-    { value: '1', label: 'Sunday' },
-    { value: '2', label: 'Monday' },
-    { value: '3', label: 'Tuesday' },
-    { value: '4', label: 'Wednesday' },
-    { value: '5', label: 'Thursday' },
-    { value: '6', label: 'Friday' },
-    { value: '7', label: 'Saturday' },
+    { value: '1', label: 'Domingo' },
+    { value: '2', label: 'Lunes' },
+    { value: '3', label: 'Martes' },
+    { value: '4', label: 'Miércoles' },
+    { value: '5', label: 'Jueves' },
+    { value: '6', label: 'Viernes' },
+    { value: '7', label: 'Sábado' },
 ];
 
 const usHolidays = [
     {
-        label: "New Year's Eve (December 31)",
+        label: "Víspera de Año Nuevo (31 de diciembre)",
         value: { mon: "12", wday: "", mday: "31", mweek: "" }
     },
     {
-        label: "New Year's Day (January 1)",
+        label: "Año Nuevo (1 de enero)",
         value: { mon: "1", wday: "", mday: "1", mweek: "" }
     },
     {
-        label: "Martin Luther King Jr. Day (3rd Monday in January)",
+        label: "Día de Martin Luther King Jr. (3er lunes de enero)",
         value: { mon: "1", wday: "2", mday: "15-21", mweek: "" }
     },
     {
-        label: "Valentine's Day (February 14)",
+        label: "Día de San Valentín (14 de febrero)",
         value: { mon: "2", wday: "", mday: "14", mweek: "" }
     },
     {
-        label: "Presidents' Day (3rd Monday in February)",
+        label: "Día de los Presidentes (3er lunes de febrero)",
         value: { mon: "2", wday: "2", mday: "15-21", mweek: "" }
     },
     {
-        label: "St. Patrick's Day (March 17)",
+        label: "Día de San Patricio (17 de marzo)",
         value: { mon: "3", wday: "", mday: "17", mweek: "" }
     },
     {
-        label: "Memorial Day (last Monday in May)",
+        label: "Día de los Caídos (último lunes de mayo)",
         value: { mon: "5", wday: "2", mday: "25-31", mweek: "" }
     },
     {
-        label: "Juneteenth (June 19)",
+        label: "Juneteenth (19 de junio)",
         value: { mon: "6", wday: "", mday: "19", mweek: "" }
     },
     {
-        label: "Independence Day (July 4)",
+        label: "Día de la Independencia (4 de julio)",
         value: { mon: "7", wday: "", mday: "4", mweek: "" }
     },
     {
-        label: "Labor Day (1st Monday in September)",
+        label: "Día del Trabajo (1er lunes de septiembre)",
         value: { mon: "9", wday: "2", mday: "1-7", mweek: "" }
     },
     {
-        label: "Columbus Day (2nd Monday in October)",
+        label: "Día de la Raza (2do lunes de octubre)",
         value: { mon: "10", wday: "2", mday: "8-14", mweek: "" }
     },
     {
-        label: "Halloween (October 31)",
+        label: "Halloween (31 de octubre)",
         value: { mon: "10", wday: "", mday: "31", mweek: "" }
     },
     {
-        label: "Veterans Day (November 11)",
+        label: "Día de los Veteranos (11 de noviembre)",
         value: { mon: "11", wday: "", mday: "11", mweek: "" }
     },
     {
-        label: "Thanksgiving Day (4th Thursday in November)",
+        label: "Día de Acción de Gracias (4to jueves de noviembre)",
         value: { mon: "11", wday: "5", mday: "22-28", mweek: "" }
     },
     {
-        label: "Black Friday (4th Friday in November)",
+        label: "Viernes Negro (4to viernes de noviembre)",
         value: { mon: "11", wday: "6", mday: "23-29", mweek: "" }
     },
     {
-        label: "Christmas Eve (December 24)",
+        label: "Nochebuena (24 de diciembre)",
         value: { mon: "12", wday: "", mday: "24", mweek: "" }
     },
     {
-        label: "Christmas Day (December 25)",
+        label: "Navidad (25 de diciembre)",
         value: { mon: "12", wday: "", mday: "25", mweek: "" }
     },
     {
-        label: "Mother's Day (2nd Sunday in May)",
+        label: "Día de la Madre (2do domingo de mayo)",
         value: { mon: "5", wday: "1", mday: "8-14", mweek: "" }
     },
     {
-        label: "Father's Day (3rd Sunday in June)",
+        label: "Día del Padre (3er domingo de junio)",
         value: { mon: "6", wday: "1", mday: "15-21", mweek: "" }
     }
 ];
 
 const caHolidays = [
     {
-        label: "New Year's Day (January 1)",
+        label: "Año Nuevo (1 de enero)",
         value: { mon: "1", wday: "", mday: "1", mweek: "" }
     },
     {
-        label: "Family Day (3rd Monday in February)",
+        label: "Día de la Familia (3er lunes de febrero)",
         value: { mon: "2", wday: "2", mday: "15-21", mweek: "" }
     },
     {
-        label: "Good Friday (Friday before Easter Sunday)",
+        label: "Viernes Santo (viernes antes del Domingo de Pascua)",
         value: { mon: "4", wday: "6", mday: "2-8", mweek: "" }
     },
     {
-        label: "Easter Monday (Monday after Easter Sunday)",
+        label: "Lunes de Pascua (lunes después del Domingo de Pascua)",
         value: { mon: "4", wday: "2", mday: "1-7", mweek: "" }
     },
     {
-        label: "Victoria Day (Last Monday before May 25)",
+        label: "Día de Victoria (último lunes antes del 25 de mayo)",
         value: { mon: "5", wday: "2", mday: "18-24", mweek: "" }
     },
     {
-        label: "Canada Day (July 1)",
+        label: "Día de Canadá (1 de julio)",
         value: { mon: "7", wday: "", mday: "1", mweek: "" }
     },
     {
-        label: "Civic Holiday (First Monday in August)",
+        label: "Feriado Cívico (1er lunes de agosto)",
         value: { mon: "8", wday: "2", mday: "1-7", mweek: "" }
     },
     {
-        label: "Labour Day (First Monday in September)",
+        label: "Día del Trabajo (1er lunes de septiembre)",
         value: { mon: "9", wday: "2", mday: "1-7", mweek: "" }
     },
     {
-        label: "National Day for Truth and Reconciliation (September 30)",
+        label: "Día Nacional de la Verdad y la Reconciliación (30 de septiembre)",
         value: { mon: "9", wday: "", mday: "30", mweek: "" }
     },
     {
-        label: "Thanksgiving Day (Second Monday in October)",
+        label: "Día de Acción de Gracias (2do lunes de octubre)",
         value: { mon: "10", wday: "2", mday: "8-14", mweek: "" }
     },
     {
-        label: "Remembrance Day (November 11)",
+        label: "Día del Recuerdo (11 de noviembre)",
         value: { mon: "11", wday: "", mday: "11", mweek: "" }
     },
     {
-        label: "Christmas Day (December 25)",
+        label: "Navidad (25 de diciembre)",
         value: { mon: "12", wday: "", mday: "25", mweek: "" }
     },
     {
-        label: "Boxing Day (December 26)",
+        label: "Boxing Day (26 de diciembre)",
         value: { mon: "12", wday: "", mday: "26", mweek: "" }
     },
     // Additional observances
     {
-        label: "St. Patrick's Day (March 17)",
+        label: "Día de San Patricio (17 de marzo)",
         value: { mon: "3", wday: "", mday: "17", mweek: "" }
     },
     {
-        label: "Mother's Day (Second Sunday in May)",
+        label: "Día de la Madre (2do domingo de mayo)",
         value: { mon: "5", wday: "1", mday: "8-14", mweek: "" }
     },
     {
-        label: "Father's Day (Third Sunday in June)",
+        label: "Día del Padre (3er domingo de junio)",
         value: { mon: "6", wday: "1", mday: "15-21", mweek: "" }
     },
     {
-        label: "Halloween (October 31)",
+        label: "Halloween (31 de octubre)",
         value: { mon: "10", wday: "", mday: "31", mweek: "" }
     }
 ];
 
 const ukHolidays = [
     {
-        label: "New Year's Day (January 1)",
+        label: "Año Nuevo (1 de enero)",
         value: { mon: "1", wday: "", mday: "1", mweek: "" }
     },
     {
-        label: "May Day (First Monday in May)",
+        label: "Día de Mayo (1er lunes de mayo)",
         value: { mon: "5", wday: "2", mday: "1-7", mweek: "" }
     },
     {
-        label: "Spring Bank Holiday (Last Monday in May)",
+        label: "Feriado bancario de primavera (último lunes de mayo)",
         value: { mon: "5", wday: "2", mday: "25-31", mweek: "" }
     },
     {
-        label: "August Bank Holiday (Last Monday in August)",
+        label: "Feriado bancario de agosto (último lunes de agosto)",
         value: { mon: "8", wday: "2", mday: "25-31", mweek: "" }
     },
     {
-        label: "August Bank Holiday (First Monday in August; Scotland Only)",
+        label: "Feriado bancario de agosto (1er lunes de agosto; solo Escocia)",
         value: { mon: "8", wday: "2", mday: "1-7", mweek: "" }
     },
     {
-        label: "Christmas Day (December 25)",
+        label: "Navidad (25 de diciembre)",
         value: { mon: "12", wday: "", mday: "25", mweek: "" }
     },
     {
-        label: "Boxing Day (December 26)",
+        label: "Boxing Day (26 de diciembre)",
         value: { mon: "12", wday: "", mday: "26", mweek: "" }
     },
     // Additional observances
     {
-        label: "St. Patrick's Day (March 17)",
+        label: "Día de San Patricio (17 de marzo)",
         value: { mon: "3", wday: "", mday: "17", mweek: "" }
     },
     {
-        label: "St. Andrew's Day (November 30)",
+        label: "Día de San Andrés (30 de noviembre)",
         value: { mon: "11", wday: "", mday: "30", mweek: "" }
     },
     {
-        label: "Mother's Day (Second Sunday in May)",
+        label: "Día de la Madre (2do domingo de mayo)",
         value: { mon: "5", wday: "1", mday: "8-14", mweek: "" }
     },
     {
-        label: "Father's Day (Third Sunday in June)",
+        label: "Día del Padre (3er domingo de junio)",
         value: { mon: "6", wday: "1", mday: "15-21", mweek: "" }
     },
     {
-        label: "Halloween (October 31)",
+        label: "Halloween (31 de octubre)",
         value: { mon: "10", wday: "", mday: "31", mweek: "" }
     }
 ];

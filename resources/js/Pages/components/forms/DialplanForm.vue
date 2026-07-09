@@ -803,4 +803,4 @@ const handleError = (error, details, form$) => {
 
     form$.messageBag.append("Could not submit form");
 };
-</script>h
+</script>

@@ -7,7 +7,7 @@
 
             <div class="col-span-10 flex flex-col sm:flex-row gap-x-2 gap-y-1 justify-between flex-auto">
                 <div class=" basis-2/4 text-sm font-medium leading-6 text-gray-900">
-                    <ComboBox :options="routingTypes" :search="true" :placeholder="'Choose type'"
+                    <ComboBox :options="routingTypes" :search="true" :placeholder="'Elegir tipo'"
                         :selectedItem="routingOptions[index].type"
                         @update:model-value="(value) => fetchRoutingTypeOptions(value, index)" />
                 </div>
@@ -15,7 +15,7 @@
                 <div v-if="routingOptions[index].typeOptions"
                     class=" basis-2/4 text-sm font-medium leading-6 text-gray-900">
                     <ComboBox :options="routingOptions[index].typeOptions" :selectedItem="routingOptions[index].option"
-                        :search="true" :placeholder="'Choose option'" :key="`combobox-${index}-${Math.random()}`"
+                        :search="true" :placeholder="'Elegir opción'" :key="`combobox-${index}-${Math.random()}`"
                         @update:model-value="(value) => updateRoutingOptions(value, index)" :disabled="routingOptions[index].optionDisabled" />
                 </div>
 
@@ -27,7 +27,7 @@
                     <div>
                         <MenuButton
                             class="flex items-center rounded-full bg-gray-100 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-                            <span class="sr-only">Open options</span>
+                            <span class="sr-only">Abrir opciones</span>
                             <EllipsisVerticalIcon
                                 class="h-9 w-9 transition duration-500 ease-in-out py-2 rounded-full text-gray-500 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 active:duration-150 cursor-pointer"
                                 aria-hidden="true" />
@@ -43,7 +43,7 @@
                             <div class="py-1">
                                 <MenuItem v-slot="{ active }">
                                 <a href="#" @click.prevent="removeRoutingOption(index)"
-                                    :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">Delete</a>
+                                    :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">Eliminar</a>
                                 </MenuItem>
 
                             </div>
@@ -60,7 +60,7 @@
             <button href="#" @click.prevent="addRoutingOption" class="flex items-center gap-2">
                 <PlusIcon class="h-6 w-6 text-black-500 hover:text-black-900 active:h-8 active:w-8 " />
                 <span>
-                    Add new routing option
+                    Agregar nueva opción de enrutamiento
                 </span>
             </button>
         </div>

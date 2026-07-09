@@ -33,7 +33,7 @@
                     class="absolute z-10 mt-1 px-2 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
                     <input v-if="search" v-model="searchKeyword"
                         class="w-full rounded-md border-0 py-1.5 pl-10 shadow-md mb-1 text-sm leading-6 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600"
-                        placeholder="Search" type="search" />
+                        placeholder="Buscar" type="search" />
 
                     <ListboxOption v-if="props.allowEmpty" v-slot="{ active, selected }" :value="null" as="template">
                         <li :class="[
@@ -43,7 +43,7 @@
                             <span :class="[
                                 selected ? 'font-medium' : 'font-normal',
                                 'block truncate',
-                            ]">None</span>
+                            ]">Ninguno</span>
                         </li>
                     </ListboxOption>
 

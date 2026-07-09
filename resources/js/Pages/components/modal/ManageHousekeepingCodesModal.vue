@@ -20,7 +20,7 @@
                                 <button type="button"
                                     class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     @click="emit('close')">
-                                    <span class="sr-only">Close</span>
+                                    <span class="sr-only">Cerrar</span>
                                     <XMarkIcon class="h-6 w-6" aria-hidden="true" />
                                 </button>
                             </div>
@@ -48,12 +48,12 @@
                                     codes_loaded: (Array.isArray(options?.housekeeping_options) && options.housekeeping_options.length > 0) ? 'true' : 'false'
                                 }">
                                 <HiddenElement name="codes_loaded" :default="'false'" />
-                                <StaticElement name="h4" tag="h4" content="Manage Housekeeping Codes" />
+                                <StaticElement name="h4" tag="h4" content="Administrar códigos de limpieza" />
                                 <GroupElement name="container_1" />
 
-                                <ButtonElement name="load_defaults_button" button-label="Load Defaults"
+                                <ButtonElement name="load_defaults_button" button-label="Cargar predeterminados"
                                     :loading="isDefaultCodesLoading" :secondary="true"
-                                    label="No custom codes defined. Load defaults?" @click="loadDefaultCodes"
+                                    label="No hay códigos personalizados definidos. ¿Cargar los predeterminados?" @click="loadDefaultCodes"
                                     :conditions="[
                                         ['codes_loaded', '==', 'false']
                                     ]" />
@@ -83,8 +83,8 @@
                                             </GroupElement>
 
                                             <SelectElement name="label" :items="options?.default_housekeeping_options"
-                                                :create="true" allow-absent :native="false" label="Label"
-                                                input-type="search" autocomplete="off" placeholder="Select Status"
+                                                :create="true" allow-absent :native="false" label="Etiqueta"
+                                                input-type="search" autocomplete="off" placeholder="Seleccionar estado"
                                                 :floating="false" :strict="false" :columns="{
                                                     container: 6,
                                                     label: 3,
@@ -202,7 +202,7 @@ const handleError = (error, details, form$) => {
         case 'prepare':
             console.log(error) // Error object
 
-            form$.messageBag.append('Could not prepare form')
+            form$.messageBag.append('No se pudo preparar el formulario')
             break
 
         // Error occured because response status is outside of 2xx
@@ -222,14 +222,14 @@ const handleError = (error, details, form$) => {
         case 'cancel':
             console.log(error) // Error object
 
-            form$.messageBag.append('Request cancelled')
+            form$.messageBag.append('Solicitud cancelada')
             break
 
         // Some other errors happened (no response object)
         case 'other':
             console.log(error) // Error object
 
-            form$.messageBag.append('Couldn\'t submit form')
+            form$.messageBag.append('No se pudo enviar el formulario')
             break
     }
 }

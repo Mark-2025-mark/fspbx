@@ -54,11 +54,11 @@
                                     <ExclamationTriangleIcon class="h-6 w-6 text-red-600" aria-hidden="true" />
                                 </div>
                                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                    <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">Are you
-                                        sure?</DialogTitle>
+                                    <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">¿Está
+                                        seguro?</DialogTitle>
                                     <div class="mt-2">
-                                        <p class="text-sm text-gray-500">Do you really want to delete this? This process
-                                            cannot be undone.</p>
+                                        <p class="text-sm text-gray-500">¿Realmente desea eliminar esto? Este proceso
+                                            no se puede deshacer.</p>
                                     </div>
                                 </div>
                             </div>
@@ -113,3 +113,4 @@ const updateGreeting = () => {
 };
 
 </script>
+

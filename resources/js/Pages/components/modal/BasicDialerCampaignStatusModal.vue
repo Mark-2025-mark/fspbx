@@ -36,7 +36,7 @@
                                     <button type="button"
                                         class="rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                         @click="emit('close')">
-                                        <span class="sr-only">Close</span>
+                                        <span class="sr-only">Cerrar</span>
                                         <XMarkIcon class="h-5 w-5" />
                                     </button>
                                 </div>
@@ -135,13 +135,13 @@
                                     <table class="min-w-full divide-y divide-gray-200 text-sm">
                                         <thead>
                                             <tr class="text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                                <th class="py-2 pr-3">Contact</th>
-                                                <th class="px-3 py-2">Phone</th>
-                                                <th class="px-3 py-2">Status</th>
-                                                <th class="px-3 py-2">Attempts</th>
-                                                <th class="px-3 py-2">Last Attempt</th>
-                                                <th class="px-3 py-2">Next Retry</th>
-                                                <th class="py-2 pl-3">Outcome</th>
+                                                <th class="py-2 pr-3">Contacto</th>
+                                                <th class="px-3 py-2">Teléfono</th>
+                                                <th class="px-3 py-2">Estado</th>
+                                                <th class="px-3 py-2">Intentos</th>
+                                                <th class="px-3 py-2">Último intento</th>
+                                                <th class="px-3 py-2">Próximo reintento</th>
+                                                <th class="py-2 pl-3">Resultado</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-100">
@@ -277,12 +277,12 @@ const summaryItems = computed(() => {
 
     return [
         { key: "total", label: "Total", value: summary.value.total_recipients ?? 0 },
-        { key: "pending", label: "Pending", value: recipientCounts.pending ?? 0 },
-        { key: "dialing", label: "Dialing", value: recipientCounts.dialing ?? 0 },
-        { key: "answered", label: "Answered", value: recipientCounts.answered ?? 0 },
-        { key: "retry_wait", label: "Retry Wait", value: recipientCounts.retry_wait ?? 0 },
-        { key: "failed", label: "Failed", value: recipientCounts.failed ?? 0 },
-        { key: "attempts", label: "Attempts", value: summary.value.total_attempts ?? 0 },
+        { key: "pending", label: "Pendiente", value: recipientCounts.pending ?? 0 },
+        { key: "dialing", label: "Marcando", value: recipientCounts.dialing ?? 0 },
+        { key: "answered", label: "Contestadas", value: recipientCounts.answered ?? 0 },
+        { key: "retry_wait", label: "Esperando reintento", value: recipientCounts.retry_wait ?? 0 },
+        { key: "failed", label: "Fallidas", value: recipientCounts.failed ?? 0 },
+        { key: "attempts", label: "Intentos", value: summary.value.total_attempts ?? 0 },
     ];
 });
 

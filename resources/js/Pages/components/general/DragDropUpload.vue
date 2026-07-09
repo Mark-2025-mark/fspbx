@@ -19,11 +19,11 @@
       />
       <!-- Prompt text when no file is selected -->
       <p v-if="!fileName" class="text-gray-600">
-        <span class="font-semibold text-gray-700">Drag & drop</span> an Excel/CSV file here, or <span class="text-blue-600 underline">browse</span>
+        <span class="font-semibold text-gray-700">Arrastra y suelta</span> un archivo Excel/CSV aquí, o <span class="text-blue-600 underline">selecciona uno</span>
       </p>
       <!-- Display selected file name -->
       <p v-else class="text-gray-700">
-        Selected file: <span class="font-medium">{{ fileName }}</span>
+        Archivo seleccionado: <span class="font-medium">{{ fileName }}</span>
       </p>
     </div>
     <!-- Error message display -->
@@ -76,14 +76,14 @@
     const allowedExtensions = ['xlsx', 'xls', 'csv']
     const fileExt = file.name.split('.').pop().toLowerCase()
     if (!allowedExtensions.includes(fileExt)) {
-      error.value = 'Invalid file type. Only .xlsx, .xls, and .csv files are allowed.'
+      error.value = 'Tipo de archivo inválido. Solo se permiten archivos .xlsx, .xls y .csv.'
       return
     }
     
     // Validate file size (max 5MB)
     const maxSize = 5 * 1024 * 1024  // 5MB in bytes
     if (file.size > maxSize) {
-      error.value = 'File size exceeds the 5MB limit.'
+      error.value = 'El tamaño del archivo supera el límite de 5MB.'
       return
     }
     

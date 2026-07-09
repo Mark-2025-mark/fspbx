@@ -2,7 +2,7 @@
     <div class="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
             <img class="mx-auto h-10 w-auto" :src="logoUrl" />
-            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Reset Password
+            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Restablecer contraseña
             </h2>
         </div>
 
@@ -11,8 +11,8 @@
 
                 <form class="space-y-6" action="#" method="POST">
                     <div>
-                        <label for="user_email" class="block text-sm font-medium leading-6 text-gray-900">Email
-                            address</label>
+                        <label for="user_email" class="block text-sm font-medium leading-6 text-gray-900">Dirección de
+                            correo electrónico</label>
                         <div class="mt-2">
                             <input v-model="form.user_email" id="user_email" name="user_email" type="email"
                                 autocomplete="email" required
@@ -29,7 +29,7 @@
                     </div>
 
                     <div>
-                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Contraseña</label>
                         <div class="mt-2">
                             <input v-model="form.password" id="password" name="password" type="password"
                                 autocomplete="current-password" required
@@ -43,8 +43,8 @@
 
                     <div>
                         <label for="password_confirmation"
-                            class="block text-sm font-medium leading-6 text-gray-900">Confirm
-                            Password</label>
+                            class="block text-sm font-medium leading-6 text-gray-900">Confirmar
+                            contraseña</label>
                         <div class="mt-2">
                             <input v-model="form.password_confirmation" id="password_confirmation"
                                 name="password_confirmation" type="password" autocomplete="current-password" required
@@ -56,12 +56,12 @@
                         </div>
 
                         <ul class="list-disc ml-5 mt-3 space-y-0.5 text-xs">
-                            <li>At least <strong>10 characters</strong></li>
-                            <li>Includes <strong>letters</strong></li>
-                            <li>Has <strong>both uppercase and lowercase</strong> letters</li>
-                            <li>Has <strong>at least one number</strong> (0–9)</li>
-                            <li>Has <strong>at least one symbol</strong> (e.g., ! @ # $ % ^ & * ( ) _ +)</li>
-                            <li><strong>Not a known compromised password</strong> (checked automatically)</li>
+                            <li>Al menos <strong>10 caracteres</strong></li>
+                            <li>Incluye <strong>letras</strong></li>
+                            <li>Tiene <strong>letras mayúsculas y minúsculas</strong></li>
+                            <li>Tiene <strong>al menos un número</strong> (0–9)</li>
+                            <li>Tiene <strong>al menos un símbolo</strong> (p. ej., ! @ # $ % ^ & * ( ) _ +)</li>
+                            <li><strong>No es una contraseña comprometida conocida</strong> (se verifica automáticamente)</li>
                         </ul>
 
                     </div>
@@ -79,7 +79,7 @@
                                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
                                 </path>
                             </svg>
-                            Reset Password
+                            Restablecer contraseña
                         </button>
                     </div>
                 </form>
@@ -87,7 +87,7 @@
                 <div class="mt-5 flex justify-center">
                     <div class="text-sm leading-6">
                         <Link :href="links['login']" class=" font-semibold text-indigo-600 hover:text-indigo-500">
-                        Back to Log In
+                        Volver a iniciar sesión
                         </Link>
                     </div>
                 </div>

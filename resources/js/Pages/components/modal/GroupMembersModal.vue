@@ -128,8 +128,8 @@
                                         <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
                                             <UsersIcon class="h-6 w-6 text-gray-400" />
                                         </div>
-                                        <p class="mt-3 text-sm font-medium text-gray-900">No members found</p>
-                                        <p class="mt-1 text-xs text-gray-500">Add a user to this group or adjust your search.</p>
+                                        <p class="mt-3 text-sm font-medium text-gray-900">No se encontraron miembros</p>
+                                        <p class="mt-1 text-xs text-gray-500">Agregue un usuario a este grupo o ajuste su búsqueda.</p>
                                     </div>
                                 </div>
                             </div>
@@ -141,9 +141,9 @@
     </TransitionRoot>
 
     <ConfirmationModal :show="showRemoveConfirmation" @close="showRemoveConfirmation = false"
-        @confirm="deleteSelectedMembers" header="Remove Members"
-        text="Remove the selected users from this group?" confirm-button-label="Remove"
-        cancel-button-label="Cancel" />
+        @confirm="deleteSelectedMembers" header="Eliminar miembros"
+        text="¿Eliminar los usuarios seleccionados de este grupo?" confirm-button-label="Eliminar"
+        cancel-button-label="Cancelar" />
 </template>
 
 <script setup>

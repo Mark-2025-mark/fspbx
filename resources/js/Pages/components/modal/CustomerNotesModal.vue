@@ -68,7 +68,7 @@ const noteLayers = [
     {
         key: 'level_1',
         level: 1,
-        label: 'Level 1',
+        label: 'Nivel 1',
         borderClass: 'border-l-4 border-l-amber-600',
         labelClass: 'text-amber-800',
         dotClass: 'bg-amber-600',
@@ -76,7 +76,7 @@ const noteLayers = [
     {
         key: 'level_2',
         level: 2,
-        label: 'Level 2',
+        label: 'Nivel 2',
         borderClass: 'border-l-4 border-l-sky-600',
         labelClass: 'text-sky-800',
         dotClass: 'bg-sky-600',
@@ -84,7 +84,7 @@ const noteLayers = [
     {
         key: 'level_3',
         level: 3,
-        label: 'Level 3',
+        label: 'Nivel 3',
         borderClass: 'border-l-4 border-l-rose-600',
         labelClass: 'text-rose-800',
         dotClass: 'bg-rose-600',

@@ -83,9 +83,9 @@ watch(() => props.loading, hydrateForm, { flush: 'post' })
 
 const handleCopyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
-        emit('success', { success: ['Copied to clipboard.'] })
+        emit('success', { success: ['Copiado al portapapeles.'] })
     }).catch(() => {
-        emit('error', { response: { data: { errors: { request: ['Failed to copy to clipboard.'] } } } })
+        emit('error', { response: { data: { errors: { request: ['No se pudo copiar al portapapeles.'] } } } })
     })
 }
 

@@ -18,10 +18,10 @@
                                 class="relative transform overflow-hidden rounded-lg bg-white px-6 pb-6 pt-6 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl sm:p-8">
                                 <div>
                                     <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">
-                                        New Group
+                                        Nuevo grupo
                                     </DialogTitle>
                                     <p class="mt-1 text-sm text-gray-500">
-                                        Create a reusable group for related call flows.
+                                        Cree un grupo reutilizable para flujos de llamadas relacionados.
                                     </p>
                                 </div>
 
@@ -31,8 +31,8 @@
 
                                             <GroupElement name="name_container" />
 
-                                            <TextElement name="group_name" label="Group Name"
-                                                placeholder="Enter group name" :floating="false"
+                                            <TextElement name="group_name" label="Nombre del grupo"
+                                                placeholder="Ingrese el nombre del grupo" :floating="false"
                                                 :columns="{ container: 12 }" />
 
                                             <StaticElement v-if="error" name="group_error">
@@ -41,11 +41,11 @@
 
                                             <GroupElement name="button_container" />
 
-                                            <ButtonElement name="cancel" button-label="Cancel" :secondary="true"
+                                            <ButtonElement name="cancel" button-label="Cancelar" :secondary="true"
                                                 :submits="false" :columns="{ sm: { container: 6 } }"
                                                 @click="emit('close')" />
 
-                                            <ButtonElement name="save" button-label="Save" :submits="false"
+                                            <ButtonElement name="save" button-label="Guardar" :submits="false"
                                                 :loading="loading" align="right"
                                                 :columns="{ sm: { container: 6 } }"
                                                 @click="saveGroup" />

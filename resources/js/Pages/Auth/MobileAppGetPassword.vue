@@ -2,7 +2,7 @@
     <div class="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
             <img class="mx-auto h-10 w-auto" :src="logoUrl" />
-            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Get Mobile App Password</h2>
+            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Obtener contraseña de la app móvil</h2>
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
@@ -10,23 +10,23 @@
 
                 <form class="space-y-6" action="#" method="POST">
                     <div>
-                        <strong>Display Name:</strong> {{ props.display_name }}
+                        <strong>Nombre para mostrar:</strong> {{ props.display_name }}
                     </div>
 
                     <div>
-                        <strong>PBX Extension:</strong> {{ props.extension }}
+                        <strong>Extensión PBX:</strong> {{ props.extension }}
                     </div>
 
                     <div>
-                        <strong>Domain:</strong> {{ props.domain }}
+                        <strong>Dominio:</strong> {{ props.domain }}
                     </div>
 
                     <div>
-                        <strong>Username:</strong> {{ props.username }}
+                        <strong>Usuario:</strong> {{ props.username }}
                     </div>
 
                     <div v-if="hasPassword">
-                        <strong>Password:</strong> {{ hasPassword }}
+                        <strong>Contraseña:</strong> {{ hasPassword }}
                     </div>
 
                     <div v-if="hasQR">
@@ -45,7 +45,7 @@
                                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
                                 </path>
                             </svg>
-                            Get Password
+                            Obtener contraseña
                         </button>
                     </div>
                 </form>

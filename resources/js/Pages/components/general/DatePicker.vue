@@ -41,12 +41,12 @@ watch(() => props.dateRange, (newDateRange) => {
 const today = new Date();
 
 const presetDates = ref([
-    { label: 'Today', value: [startOfDay(today), endOfDay(today)] },
-    { label: 'This Week', value: [startOfWeek(startOfDay(today), { weekStartsOn: 0 }), endOfWeek(endOfDay(today), { weekStartsOn: 0 })] },
-    { label: 'Past 7 Days', value: [subDays(startOfDay(today), 6), endOfDay(today)] },
-    { label: 'Past 30 Days', value: [subDays(startOfDay(today), 29), endOfDay(today)] },
-    { label: 'This Month', value: [startOfMonth(startOfDay(today)), endOfMonth(endOfDay(today))] },
-    { label: 'Last Month', value: [startOfMonth(subMonths(startOfDay(today), 1)), endOfMonth(subMonths(endOfDay(today), 1))] }
+    { label: 'Hoy', value: [startOfDay(today), endOfDay(today)] },
+    { label: 'Esta semana', value: [startOfWeek(startOfDay(today), { weekStartsOn: 0 }), endOfWeek(endOfDay(today), { weekStartsOn: 0 })] },
+    { label: 'Últimos 7 días', value: [subDays(startOfDay(today), 6), endOfDay(today)] },
+    { label: 'Últimos 30 días', value: [subDays(startOfDay(today), 29), endOfDay(today)] },
+    { label: 'Este mes', value: [startOfMonth(startOfDay(today)), endOfMonth(endOfDay(today))] },
+    { label: 'Mes pasado', value: [startOfMonth(subMonths(startOfDay(today), 1)), endOfMonth(subMonths(endOfDay(today), 1))] }
 ]);
 
 const emit = defineEmits(['update:dateRange']);

@@ -10,7 +10,7 @@
                         <button type="button"
                             class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             @click="emit('close')">
-                            <span class="sr-only">Close</span>
+                            <span class="sr-only">Cerrar</span>
                             <XMarkIcon class="h-6 w-6" aria-hidden="true" />
                         </button>
                     </div>
@@ -21,16 +21,16 @@
                             password: sip_credentials?.password,
                         }">
                         <HiddenElement name="extension_uuid" :meta="true" />
-                        <StaticElement name="h4" tag="h4" content="Update SIP Password" />
+                        <StaticElement name="h4" tag="h4" content="Actualizar contraseña SIP" />
 
-                        <TextElement name="password" label="Password" description="" />
+                        <TextElement name="password" label="Contraseña" description="" />
 
                         <GroupElement name="container_3" />
-                        <ButtonElement name="reset" button-label="Cancel" :secondary="true" :resets="true"
+                        <ButtonElement name="reset" button-label="Cancelar" :secondary="true" :resets="true"
                             @click="emit('close')" :columns="{
                                 container: 6,
                             }" />
-                        <ButtonElement name="submit" button-label="Update" :submits="true" align="right" :columns="{
+                        <ButtonElement name="submit" button-label="Actualizar" :submits="true" align="right" :columns="{
                             container: 6,
                         }" />
                     </Vueform>
@@ -111,7 +111,7 @@ const handleError = (error, details, form$) => {
         case 'prepare':
             console.log(error) // Error object
 
-            form$.messageBag.append('Could not prepare form')
+            form$.messageBag.append('No se pudo preparar el formulario')
             break
 
         // Error occured because response status is outside of 2xx
@@ -131,14 +131,14 @@ const handleError = (error, details, form$) => {
         case 'cancel':
             console.log(error) // Error object
 
-            form$.messageBag.append('Request cancelled')
+            form$.messageBag.append('Solicitud cancelada')
             break
 
         // Some other errors happened (no response object)
         case 'other':
             console.log(error) // Error object
 
-            form$.messageBag.append('Couldn\'t submit form')
+            form$.messageBag.append('No se pudo enviar el formulario')
             break
     }
 }

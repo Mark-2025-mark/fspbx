@@ -2,7 +2,7 @@
     <div ref="dropdownRef" class="relative w-full">
         <!-- Search/Select Input -->
         <input type="text" :value="dropdownOpen ? searchQuery : selectedOption?.name || ''" @focus="openDropdown"
-            @input="onSearch" placeholder="Search or select..."
+            @input="onSearch" placeholder="Buscar o seleccionar..."
             class="w-full border-0 cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md ring-1 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm" />
         <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
             <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -58,7 +58,7 @@ const props = defineProps({
     },
     placeholder: {
         type: String,
-        default: "Select an option",
+        default: "Seleccionar una opción",
     },
 });
 

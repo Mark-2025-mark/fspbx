@@ -38,7 +38,7 @@
                             <span :class="[
                                 selected ? 'font-medium' : 'font-normal',
                                 'block truncate',
-                            ]">None</span>
+                            ]">Ninguno</span>
                         </li>
                     </ComboboxOption>
 

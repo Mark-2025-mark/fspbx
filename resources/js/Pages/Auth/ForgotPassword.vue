@@ -2,7 +2,7 @@
     <div class="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
             <img class="mx-auto h-10 w-auto" :src="logoUrl" />
-            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Reset Password
+            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Restablecer contraseña
             </h2>
         </div>
 
@@ -10,8 +10,8 @@
             <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
 
                 <div class="mb-4 text-sm text-gray-600">
-                    Forgot your password? No problem. Just let us know your email address and we will email you a
-                    password reset link that will allow you to choose a new one.
+                    ¿Olvidó su contraseña? No hay problema. Solo indíquenos su dirección de correo electrónico y le
+                    enviaremos un enlace para restablecer la contraseña que le permitirá elegir una nueva.
                 </div>
 
                 <div v-if="status" class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
@@ -20,8 +20,8 @@
 
                 <form class="space-y-6" action="#" method="POST">
                     <div>
-                        <label for="user_email" class="block text-sm font-medium leading-6 text-gray-900">Email
-                            address</label>
+                        <label for="user_email" class="block text-sm font-medium leading-6 text-gray-900">Dirección de
+                            correo electrónico</label>
                         <div class="mt-2">
                             <input v-model="form.user_email" id="user_email" name="user_email" type="email"
                                 autocomplete="email" required
@@ -44,7 +44,7 @@
                                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
                                 </path>
                             </svg>
-                            Email Password Reset Link
+                            Enviar enlace de restablecimiento por correo
                         </button>
                     </div>
                 </form>
@@ -52,7 +52,7 @@
                 <div class="mt-5 flex justify-center">
                     <div class="text-sm leading-6">
                         <Link :href="links['login']" class=" font-semibold text-indigo-600 hover:text-indigo-500">
-                        Back to Log In
+                        Volver a iniciar sesión
                         </Link>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ const submitForm = () => {
                 },
             });
         }).catch((error) => {
-            errorMessage.value = "Invalid token. Refresh the page."
+            errorMessage.value = "Token inválido. Actualice la página."
             isLoading.value = false; // Reset loading state on error
         });
 

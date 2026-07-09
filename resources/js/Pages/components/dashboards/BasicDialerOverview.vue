@@ -1,7 +1,7 @@
 <template>
     <div class="space-y-6">
         <div v-if="loading && !loaded" class="rounded-lg bg-white p-12 text-center text-sm text-gray-500 ring-1 ring-gray-200">
-            Loading dashboard...
+            Cargando panel...
         </div>
 
         <template v-else>
@@ -9,37 +9,37 @@
                 <span class="text-xs text-gray-400">{{ lastUpdatedLabel }}</span>
                 <button type="button" @click="fetchOverview"
                     class="rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    title="Refresh">
+                    title="Actualizar">
                     <ArrowPathIcon class="h-5 w-5" :class="{ 'animate-spin': loading }" />
                 </button>
             </div>
 
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-                <KpiCard label="Running" :value="kpis.running_campaigns" :sub="`of ${kpis.total_campaigns} campaigns`"
+                <KpiCard label="En ejecución" :value="kpis.running_campaigns" :sub="`de ${kpis.total_campaigns} campañas`"
                     accent="bg-blue-50 text-blue-700 ring-blue-600/20" />
-                <KpiCard label="Paused" :value="kpis.paused_campaigns" sub="campaigns"
+                <KpiCard label="Pausadas" :value="kpis.paused_campaigns" sub="campañas"
                     accent="bg-yellow-50 text-yellow-700 ring-yellow-600/20" />
-                <KpiCard label="Calls Today" :value="kpis.attempts_today"
-                    :sub="`${kpis.answered_today} answered`"
+                <KpiCard label="Llamadas hoy" :value="kpis.attempts_today"
+                    :sub="`${kpis.answered_today} contestadas`"
                     accent="bg-indigo-50 text-indigo-700 ring-indigo-600/20" />
-                <KpiCard label="Answer Rate (Today)" :value="`${kpis.answer_rate_today}%`"
-                    :sub="`${kpis.answer_rate}% all-time`"
+                <KpiCard label="Tasa de respuesta (Hoy)" :value="`${kpis.answer_rate_today}%`"
+                    :sub="`${kpis.answer_rate}% histórico`"
                     accent="bg-emerald-50 text-emerald-700 ring-emerald-600/20" />
-                <KpiCard label="Total Attempts" :value="kpis.total_attempts"
-                    :sub="`${kpis.total_answered} answered`"
+                <KpiCard label="Intentos totales" :value="kpis.total_attempts"
+                    :sub="`${kpis.total_answered} contestados`"
                     accent="bg-gray-50 text-gray-700 ring-gray-600/20" />
-                <KpiCard label="Talk Time" :value="formatDuration(kpis.total_talk_seconds)" sub="cumulative"
+                <KpiCard label="Tiempo de conversación" :value="formatDuration(kpis.total_talk_seconds)" sub="acumulado"
                     accent="bg-violet-50 text-violet-700 ring-violet-600/20" />
             </div>
 
             <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
                 <div class="rounded-lg bg-white p-5 ring-1 ring-gray-200 lg:col-span-1">
                     <div class="mb-3 flex items-baseline justify-between">
-                        <h3 class="text-sm font-semibold text-gray-900">Outcome Breakdown</h3>
-                        <span class="text-xs text-gray-400">{{ outcomeTotal }} attempts</span>
+                        <h3 class="text-sm font-semibold text-gray-900">Desglose de resultados</h3>
+                        <span class="text-xs text-gray-400">{{ outcomeTotal }} intentos</span>
                     </div>
                     <div v-if="outcomeBreakdown.length === 0" class="py-12 text-center text-sm text-gray-500">
-                        No attempts yet.
+                        Aún no hay intentos.
                     </div>
                     <div v-else class="flex flex-col items-center gap-4">
                         <div class="relative h-48 w-48">
@@ -64,11 +64,11 @@
 
                 <div class="rounded-lg bg-white p-5 ring-1 ring-gray-200 lg:col-span-2">
                     <div class="mb-3 flex items-baseline justify-between">
-                        <h3 class="text-sm font-semibold text-gray-900">Hangup Causes</h3>
-                        <span class="text-xs text-gray-400">top {{ hangupBreakdown.length }}</span>
+                        <h3 class="text-sm font-semibold text-gray-900">Causas de finalización</h3>
+                        <span class="text-xs text-gray-400">los {{ hangupBreakdown.length }} principales</span>
                     </div>
                     <div v-if="hangupBreakdown.length === 0" class="py-12 text-center text-sm text-gray-500">
-                        No hangup cause data yet.
+                        Aún no hay datos de causas de finalización.
                     </div>
                     <div v-else class="h-64">
                         <Bar :data="hangupChartData" :options="barOptions" />
@@ -77,7 +77,7 @@
             </div>
 
             <div v-if="activeCampaigns.length > 0" class="rounded-lg bg-white p-5 ring-1 ring-gray-200">
-                <h3 class="mb-3 text-sm font-semibold text-gray-900">Active Campaigns</h3>
+                <h3 class="mb-3 text-sm font-semibold text-gray-900">Campañas activas</h3>
                 <div class="space-y-3">
                     <div v-for="campaign in activeCampaigns" :key="campaign.basic_dialer_campaign_uuid"
                         class="rounded-md border border-gray-100 px-4 py-3 hover:bg-gray-50 cursor-pointer"
@@ -89,15 +89,15 @@
                                     <Badge :text="campaign.status" v-bind="statusBadgeProps(campaign.status)" />
                                 </div>
                                 <div class="mt-1 text-xs text-gray-500">
-                                    {{ campaign.answered_recipients_count }} answered
-                                    &middot; {{ campaign.failed_recipients_count }} failed
-                                    &middot; {{ campaign.pending_recipients_count }} pending
+                                    {{ campaign.answered_recipients_count }} contestados
+                                    &middot; {{ campaign.failed_recipients_count }} fallidos
+                                    &middot; {{ campaign.pending_recipients_count }} pendientes
                                 </div>
                             </div>
                             <div class="w-40 sm:w-56">
                                 <div class="flex items-center justify-between text-xs text-gray-500">
                                     <span>{{ campaignProgress(campaign) }}%</span>
-                                    <span>{{ campaign.recipients_count }} contacts</span>
+                                    <span>{{ campaign.recipients_count }} contactos</span>
                                 </div>
                                 <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-gray-100">
                                     <div class="h-full rounded-full bg-indigo-500"
@@ -111,23 +111,23 @@
 
             <div class="rounded-lg bg-white ring-1 ring-gray-200">
                 <div class="flex items-center justify-between border-b border-gray-100 px-5 py-3">
-                    <h3 class="text-sm font-semibold text-gray-900">Recent Activity</h3>
-                    <span class="text-xs text-gray-400">last {{ recentActivity.length }} attempts</span>
+                    <h3 class="text-sm font-semibold text-gray-900">Actividad reciente</h3>
+                    <span class="text-xs text-gray-400">últimos {{ recentActivity.length }} intentos</span>
                 </div>
                 <div v-if="recentActivity.length === 0" class="py-12 text-center text-sm text-gray-500">
-                    No call activity yet.
+                    Aún no hay actividad de llamadas.
                 </div>
                 <div v-else class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-100 text-sm">
                         <thead class="bg-gray-50">
                             <tr class="text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                <th class="px-4 py-2">When</th>
-                                <th class="px-4 py-2">Campaign</th>
-                                <th class="px-4 py-2">Phone</th>
-                                <th class="px-4 py-2">Status</th>
-                                <th class="px-4 py-2">Outcome</th>
-                                <th class="px-4 py-2">Hangup</th>
-                                <th class="px-4 py-2">Duration</th>
+                                <th class="px-4 py-2">Cuándo</th>
+                                <th class="px-4 py-2">Campaña</th>
+                                <th class="px-4 py-2">Teléfono</th>
+                                <th class="px-4 py-2">Estado</th>
+                                <th class="px-4 py-2">Resultado</th>
+                                <th class="px-4 py-2">Finalización</th>
+                                <th class="px-4 py-2">Duración</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
@@ -288,7 +288,7 @@ const barOptions = {
 
 const lastUpdatedLabel = computed(() => {
     if (!lastUpdated.value) return "";
-    return `Updated ${formatRelative(lastUpdated.value)}`;
+    return `Actualizado ${formatRelative(lastUpdated.value)}`;
 });
 
 let pollHandle = null;
@@ -354,11 +354,11 @@ function formatRelative(value) {
     const then = new Date(value).getTime();
     if (Number.isNaN(then)) return "-";
     const diff = Math.floor((Date.now() - then) / 1000);
-    if (diff < 5) return "just now";
-    if (diff < 60) return `${diff}s ago`;
-    if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
-    if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
-    return `${Math.floor(diff / 86400)}d ago`;
+    if (diff < 5) return "justo ahora";
+    if (diff < 60) return `hace ${diff}s`;
+    if (diff < 3600) return `hace ${Math.floor(diff / 60)}m`;
+    if (diff < 86400) return `hace ${Math.floor(diff / 3600)}h`;
+    return `hace ${Math.floor(diff / 86400)}d`;
 }
 
 function statusBadgeProps(status) {

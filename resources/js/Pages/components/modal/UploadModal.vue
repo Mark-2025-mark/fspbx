@@ -18,7 +18,7 @@
                                 <button type="button"
                                     class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     @click="emit('close')">
-                                    <span class="sr-only">Close</span>
+                                    <span class="sr-only">Cerrar</span>
                                     <XMarkIcon class="h-6 w-6" aria-hidden="true" />
                                 </button>
                             </div>
@@ -59,12 +59,12 @@
 
                                 <button type="button"
                                     class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                                    @click="emit('close')" ref="cancelButtonRef">Cancel</button>
+                                    @click="emit('close')" ref="cancelButtonRef">Cancelar</button>
 
                                 <button type="button" :disabled="isSubmitting"
                                     class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
                                     @click="uploadFile()">
-                                    Upload
+                                    Subir
                                     <Spinner class="ml-2" :color="'text-gray-700'" :show="isSubmitting" />
                                 </button>
                             </div>
@@ -125,3 +125,4 @@ function downloadTemplate() {
     emit('download-template');
 }
 </script>
+

@@ -167,7 +167,7 @@ const handleError = (error, details, form$) => {
         case 'prepare':
             console.log(error) // Error object
 
-            form$.messageBag.append('Could not prepare form')
+            form$.messageBag.append('No se pudo preparar el formulario')
             break
 
         // Error occured because response status is outside of 2xx

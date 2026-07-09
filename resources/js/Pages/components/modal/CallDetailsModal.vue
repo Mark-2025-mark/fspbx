@@ -18,7 +18,7 @@
                                 <button type="button"
                                     class="rounded-md bg-gray-100 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     @click="emit('close')">
-                                    <span class="sr-only">Close</span>
+                                    <span class="sr-only">Cerrar</span>
                                     <XMarkIcon class="h-6 w-6" aria-hidden="true" />
                                 </button>
                             </div>
@@ -68,7 +68,7 @@
                                                         <div class="px-4 py-5 sm:px-6">
                                                             <h2 id="applicant-information-title"
                                                                 class="text-lg font-medium leading-6 text-gray-900">
-                                                                Call Information</h2>
+                                                                Información de la llamada</h2>
                                                             <div class="mt-1 max-w-2xl text-sm text-gray-500 space-y-1">
                                                                 <div class="flex items-start gap-2">
                                                                     <span class="text-gray-500">SIP Call-ID:</span>
@@ -116,7 +116,7 @@
                                                                     <dl class="divide-y divide-gray-200">
                                                                         <div
                                                                             class="flex justify-between py-3 text-sm font-medium">
-                                                                            <dt class="text-gray-900">{{ 'Waiting time' }}
+                                                                            <dt class="text-gray-900">{{ 'Tiempo de espera' }}
                                                                             </dt>
                                                                             <dd class="whitespace-nowrap text-gray-500">
                                                                                 {{ item.waitsec_formatted }}
@@ -261,8 +261,8 @@
                                                                         <div class="relative">
                                                                             <div
                                                                                 class="flex rounded-full bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600">
-                                                                                <PhoneLocalIcon class="w-4 h-4 mr-2" /> Call
-                                                                                to
+                                                                                <PhoneLocalIcon class="w-4 h-4 mr-2" /> Llamada
+                                                                                a
                                                                                 {{ item.caller_destination_formatted
                                                                                 }}
                                                                             </div>
@@ -727,7 +727,7 @@
                                                                             <div
                                                                                 class="flex rounded-full bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600">
                                                                                 <CallEndIcon class="w-4 h-4 mr-2" />
-                                                                                End of the call
+                                                                                Fin de la llamada
 
                                                                             </div>
                                                                         </div>
@@ -840,3 +840,4 @@ function capitalizeFirstLetter(string) {
 }
 
 </script>
+

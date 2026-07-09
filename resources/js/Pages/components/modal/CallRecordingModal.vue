@@ -140,10 +140,10 @@
                                                 <SparklesIcon class="h-6 w-6 text-indigo-600" />
                                             </div>
                                             <div>
-                                                <h3 class="text-base font-semibold text-gray-800">AI Voice Transcription
+                                                <h3 class="text-base font-semibold text-gray-800">Transcripción de voz por IA
                                                 </h3>
-                                                <p class="text-sm text-gray-500">Generate a searchable text version of
-                                                    this audio.</p>
+                                                <p class="text-sm text-gray-500">Genere una versión de texto con capacidad de búsqueda de
+                                                    este audio.</p>
                                             </div>
                                         </div>
 
@@ -163,7 +163,7 @@
                                                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
                                                     </path>
                                                 </svg>
-                                                <span>{{ isRequestingTranscription ? 'Requesting...' : 'Transcribe'
+                                                <span>{{ isRequestingTranscription ? 'Solicitando...' : 'Transcribir'
                                                 }}</span>
                                             </button>
 
@@ -230,16 +230,16 @@
                                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
                                             </path>
                                         </svg> -->
-                                        <p class="mt-4 text-sm font-semibold text-indigo-600">Transcription in progress.
-                                            Click Refresh to check status.</p>
+                                        <p class="mt-4 text-sm font-semibold text-indigo-600">Transcripción en progreso.
+                                            Haga clic en Actualizar para verificar el estado.</p>
 
                                         <!-- START: REFRESH BUTTON -->
                                         <button type="button" @click="refreshStatus" :disabled="!canRefresh"
                                             class="mt-6 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50">
                                             <ArrowPathIcon class="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
                                                 :class="{ 'animate-spin': !canRefresh }" />
-                                            <span v-if="canRefresh">Refresh Status</span>
-                                            <span v-else>Refresh in {{ cooldownSeconds }}s</span>
+                                            <span v-if="canRefresh">Actualizar estado</span>
+                                            <span v-else>Actualizar en {{ cooldownSeconds }}s</span>
                                         </button>
                                         <!-- END: REFRESH BUTTON -->
 
@@ -253,7 +253,7 @@
                                             <!-- Mobile-friendly Select Menu -->
                                             <div class="sm:hidden">
                                                 <div class="relative">
-                                                    <select v-model="selectedTabIndex" aria-label="Select a tab"
+                                                    <select v-model="selectedTabIndex" aria-label="Seleccionar una pestaña"
                                                         class="block w-full appearance-none rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-base text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500">
                                                         <option v-for="(tab, index) in TABS" :key="tab.key"
                                                             :value="index">
@@ -356,7 +356,7 @@
                                                             <h3
                                                                 class="flex items-center gap-2 text-base font-semibold text-gray-800">
                                                                 <CheckCircleIcon class="h-6 w-6 text-green-500" />
-                                                                <span>Action Items</span>
+                                                                <span>Elementos de acción</span>
                                                             </h3>
                                                             <ul class="space-y-2 text-gray-700">
                                                                 <li v-for="(item, i) in recordingOptions?.transcription?.action_items"
@@ -439,17 +439,17 @@
                                                         <ExclamationTriangleIcon
                                                             class="mx-auto h-12 w-12 text-rose-400" />
                                                         <h3 class="mt-2 text-sm font-semibold text-rose-900">
-                                                            Summary Generation Failed
+                                                            Error al generar el resumen
                                                         </h3>
                                                         <p class="mt-1 text-sm text-rose-700">
-                                                            We were unable to generate a summary for this call.
+                                                            No pudimos generar un resumen para esta llamada.
                                                         </p>
                                                         <button type="button" @click="regenerateSummary"
                                                             :disabled="isRegeneratingSummary"
                                                             class="mt-4 inline-flex items-center rounded-md bg-rose-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-500 disabled:opacity-50">
                                                             <ArrowPathIcon class="-ml-0.5 mr-1.5 h-5 w-5"
                                                                 :class="{ 'animate-spin': isRegeneratingSummary }" />
-                                                            {{ isRegeneratingSummary ? 'Retrying...' : 'Retry' }}
+                                                            {{ isRegeneratingSummary ? 'Reintentando...' : 'Reintentar' }}
                                                         </button>
                                                     </div>
 
@@ -458,10 +458,10 @@
                                                         class="rounded-lg border-2 border-dashed border-gray-300 p-12 text-center">
                                                         <SparklesIcon class="mx-auto h-12 w-12 text-gray-400" />
                                                         <h3 class="mt-2 text-sm font-semibold text-gray-900">
-                                                            AI Summary is available
+                                                            El resumen con IA está disponible
                                                         </h3>
                                                         <p class="mt-1 text-sm text-gray-500">
-                                                            Summary generation is part of the transcription process.
+                                                            La generación del resumen forma parte del proceso de transcripción.
                                                         </p>
                                                     </div>
                                                 </TabPanel>
@@ -749,8 +749,8 @@ const DEFAULT_PALETTE = {
 }
 
 const TABS = [
-    { key: 'transcript', label: 'Transcript' },
-    { key: 'summary', label: 'Summary' },
+    { key: 'transcript', label: 'Transcripción' },
+    { key: 'summary', label: 'Resumen' },
 ]
 
 

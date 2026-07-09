@@ -113,11 +113,11 @@
         <div class="flex flex-1 flex-col space-y-3">
 
             <!-- Breadcrumbs + sidebar toggle -->
-            <nav class="flex py-2" aria-label="Breadcrumb">
+            <nav class="flex py-2" aria-label="Ruta de navegación">
                 <ol role="list" class="flex items-center space-x-4">
                     <li>
                         <button type="button" @click="toggleNav"
-                            :aria-label="isNavCollapsed ? 'Open sidebar' : 'Collapse sidebar'"
+                            :aria-label="isNavCollapsed ? 'Abrir barra lateral' : 'Contraer barra lateral'"
                             class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white p-1.5 text-gray-600 hover:text-indigo-600 hover:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                             <ChevronDoubleLeftIcon v-if="!isNavCollapsed" class="size-4" />
                             <ChevronDoubleLeftIcon v-else class="size-4 rotate-180" />

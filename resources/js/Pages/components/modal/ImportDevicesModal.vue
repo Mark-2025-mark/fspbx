@@ -35,26 +35,26 @@
                                     <path class="opacity-75" fill="currentColor"
                                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                                 </svg>
-                                <span class="ml-2 text-gray-600">Processing...</span>
+                                <span class="ml-2 text-gray-600">Procesando...</span>
                             </div>
 
                             <div v-else class="w-full">
                                 <Vueform ref="form$" :endpoint="false" :display-errors="false"
                                     :default="{ items: importData }">
-                                    <StaticElement name="bulk_header" tag="h4" content="Bulk Apply"
+                                    <StaticElement name="bulk_header" tag="h4" content="Aplicar en masa"
                                         class="mb-2 mt-2 text-sm font-semibold text-gray-700" />
 
                                     <GroupElement name="bulk_group" :columns="{ lg: 12, md: 12, sm: 12 }"
                                         class="mb-6 flex items-start rounded-lg border border-gray-200 bg-gray-50 p-4">
-                                        <SelectElement name="bulk_device_template" label="Template" :floating="false"
+                                        <SelectElement name="bulk_device_template" label="Plantilla" :floating="false"
                                             :items="options?.templates || []" label-prop="name" value-prop="value"
                                             :search="true" :native="false" input-type="search" autocomplete="off"
-                                            placeholder="Select template..." :columns="{ lg: 5, md: 5, sm: 12 }" />
+                                            placeholder="Seleccionar plantilla..." :columns="{ lg: 5, md: 5, sm: 12 }" />
 
-                                        <SelectElement name="bulk_device_key_template_uuid" label="Key Template"
+                                        <SelectElement name="bulk_device_key_template_uuid" label="Plantilla de teclas"
                                             :floating="false" :items="options?.key_templates || []" label-prop="name"
                                             value-prop="value" :search="true" :native="false" input-type="search"
-                                            autocomplete="off" placeholder="Select key template..."
+                                            autocomplete="off" placeholder="Seleccionar plantilla de teclas..."
                                             :columns="{ lg: 5, md: 5, sm: 12 }" />
 
                                         <StaticElement name="apply_bulk_btn" :columns="{ lg: 2, md: 2, sm: 12 }">
@@ -62,7 +62,7 @@
                                                 <div class="pt-[26px]">
                                                     <button type="button" @click.prevent="handleBulkApply"
                                                         class="inline-flex w-full justify-center whitespace-nowrap rounded-md bg-indigo-600 px-3 py-[9px] text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                                                        Apply to All
+                                                        Aplicar a todos
                                                     </button>
                                                 </div>
                                             </template>
@@ -73,11 +73,11 @@
                                         <template #default>
                                             <div
                                                 class="mb-2 hidden grid-cols-12 gap-4 border-b border-gray-200 bg-white px-2 py-2 text-xs font-bold uppercase tracking-wider text-gray-500 lg:grid">
-                                                <div class="col-span-2 pl-2">MAC Address</div>
-                                                <div class="col-span-2 pl-2">Serial Number</div>
-                                                <div class="col-span-2 pl-2">Extension</div>
-                                                <div class="col-span-3 pl-2">Template</div>
-                                                <div class="col-span-3 pl-2">Key Template</div>
+                                                <div class="col-span-2 pl-2">Dirección MAC</div>
+                                                <div class="col-span-2 pl-2">Número de serie</div>
+                                                <div class="col-span-2 pl-2">Extensión</div>
+                                                <div class="col-span-3 pl-2">Plantilla</div>
+                                                <div class="col-span-3 pl-2">Plantilla de teclas</div>
                                             </div>
                                         </template>
                                     </StaticElement>

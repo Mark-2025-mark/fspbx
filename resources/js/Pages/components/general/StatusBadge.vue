@@ -10,11 +10,11 @@ const props = defineProps({
     enabled: [Boolean, String],
     enabledLabel: {
         type: String,
-        default: 'Enabled'
+        default: 'Habilitado'
     },
     disabledLabel: {
         type: String,
-        default: 'Disabled'
+        default: 'Deshabilitado'
     }
 });
 

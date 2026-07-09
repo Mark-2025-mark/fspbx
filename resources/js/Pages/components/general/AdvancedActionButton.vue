@@ -3,7 +3,7 @@
         <div>
             <MenuButton ref="trigger"
                 class="flex items-center rounded py-2 hover:bg-gray-200 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-1 focus:bg-gray-200 focus:ring-gray-300 transition duration-500 ease-in-out">
-                <span class="sr-only">Open options</span>
+                <span class="sr-only">Abrir opciones</span>
                 <EllipsisVerticalIcon class="h-5 w-5" aria-hidden="true" />
             </MenuButton>
         </div>

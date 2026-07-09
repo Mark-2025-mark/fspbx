@@ -24,7 +24,7 @@
                                 <button type="button"
                                     class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     @click="emit('close')">
-                                    <span class="sr-only">Close</span>
+                                    <span class="sr-only">Cerrar</span>
                                     <XMarkIcon class="h-6 w-6" aria-hidden="true" />
                                 </button>
                             </div>
@@ -88,10 +88,10 @@
                                     <StaticElement name="table_header_row">
                                         <template #default>
                                             <div class="hidden lg:grid grid-cols-12 gap-4 px-2 py-2 bg-white border-b border-gray-200 text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
-                                                <div class="col-span-3 pl-2">Phone Number</div>
-                                                <div class="col-span-3 pl-2">Action</div>
-                                                <div class="col-span-3 pl-2">Target</div>
-                                                <div class="col-span-3 pl-2">Description</div>
+                                                <div class="col-span-3 pl-2">Número de teléfono</div>
+                                                <div class="col-span-3 pl-2">Acción</div>
+                                                <div class="col-span-3 pl-2">Destino</div>
+                                                <div class="col-span-3 pl-2">Descripción</div>
                                             </div>
                                         </template>
                                     </StaticElement>
@@ -263,7 +263,7 @@ const manualSubmit = async () => {
         console.error("Submission failed:", error);
         if(error.response && error.response.data && error.response.data.errors) {
              const errorMsg = Object.values(error.response.data.errors).flat().join('\n');
-             alert("Import Failed:\n" + errorMsg);
+             alert("Error de importación:\n" + errorMsg);
         }
     }
 };

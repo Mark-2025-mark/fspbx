@@ -38,38 +38,38 @@
                                 <HiddenElement name="uuid" :meta="true" />
 
                                 <!-- enable + mode -->
-                                <ToggleElement name="status" text="Gateway enabled" true-value="true" false-value="false" />
-                                <RadiogroupElement name="sandbox" label="Mode" view="tabs" :items="{ true: 'Test', false: 'Live' }"
-                                    description="Test uses sandbox keys and never charges a real card." :rules="['required']" />
+                                <ToggleElement name="status" text="Pasarela habilitada" true-value="true" false-value="false" />
+                                <RadiogroupElement name="sandbox" label="Modo" view="tabs" :items="{ true: 'Prueba', false: 'Producción' }"
+                                    description="El modo de prueba usa claves de sandbox y nunca cobra a una tarjeta real." :rules="['required']" />
 
                                 <!-- show secrets toggle -->
                                 <StaticElement name="reveal_secrets">
                                     <label class="flex cursor-pointer items-center gap-2 text-xs font-medium text-gray-500">
                                         <input type="checkbox" v-model="showSecrets" class="h-3.5 w-3.5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                                        Show secret values
+                                        Mostrar valores secretos
                                     </label>
                                 </StaticElement>
 
                                 <!-- TEST keys -->
                                 <StaticElement name="test_keys_heading" tag="p"
-                                    content="Test API keys" :conditions="[['sandbox', 'true']]"
+                                    content="Claves de API de prueba" :conditions="[['sandbox', 'true']]"
                                     class="text-xs font-semibold uppercase tracking-wide text-gray-400" />
-                                <TextElement name="sandbox_secret_key" label="Secret key"
+                                <TextElement name="sandbox_secret_key" label="Clave secreta"
                                     :input-type="showSecrets ? 'text' : 'password'" autocomplete="off" :floating="false"
                                     placeholder="sk_test_…" :description="hint('sandbox_secret_key', 'sk_test_…')"
                                     :conditions="[['sandbox', 'true']]" />
-                                <TextElement name="sandbox_publishable_key" label="Publishable key (optional)"
+                                <TextElement name="sandbox_publishable_key" label="Clave publicable (opcional)"
                                     :floating="false" placeholder="pk_test_…" :conditions="[['sandbox', 'true']]" />
 
                                 <!-- LIVE keys -->
                                 <StaticElement name="live_keys_heading" tag="p"
-                                    content="Live API keys" :conditions="[['sandbox', 'false']]"
+                                    content="Claves de API de producción" :conditions="[['sandbox', 'false']]"
                                     class="text-xs font-semibold uppercase tracking-wide text-gray-400" />
-                                <TextElement name="live_mode_secret_key" label="Secret key"
+                                <TextElement name="live_mode_secret_key" label="Clave secreta"
                                     :input-type="showSecrets ? 'text' : 'password'" autocomplete="off" :floating="false"
                                     placeholder="sk_live_…" :description="hint('live_mode_secret_key', 'sk_live_…')"
                                     :conditions="[['sandbox', 'false']]" />
-                                <TextElement name="live_mode_publishable_key" label="Publishable key (optional)"
+                                <TextElement name="live_mode_publishable_key" label="Clave publicable (opcional)"
                                     :floating="false" placeholder="pk_live_…" :conditions="[['sandbox', 'false']]" />
 
                                 <!-- test connection -->
@@ -98,23 +98,23 @@
                                     class="text-xs font-semibold uppercase tracking-wide text-gray-400" />
                                 <StaticElement name="webhook_endpoint">
                                     <div class="text-xs text-gray-500">
-                                        Add this endpoint in Stripe → Developers → Webhooks:
+                                        Agregue este endpoint en Stripe → Developers → Webhooks:
                                         <div class="mt-1 flex items-center gap-2">
                                             <code class="flex-1 truncate rounded bg-gray-100 px-2 py-1 text-gray-700">{{ webhookUrl }}</code>
                                             <button type="button" class="rounded-md px-2 py-1 text-xs font-semibold text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:bg-indigo-50" @click="copyWebhook">
-                                                {{ copied ? 'Copied' : 'Copy' }}
+                                                {{ copied ? 'Copiado' : 'Copiar' }}
                                             </button>
                                         </div>
                                     </div>
                                 </StaticElement>
-                                <TextElement name="webhook_secret" label="Secret"
+                                <TextElement name="webhook_secret" label="Secreto"
                                     :input-type="'text'" autocomplete="off" :floating="false"
-                                    placeholder="whsec_…" description="Used to verify incoming Stripe webhooks." />
+                                    placeholder="whsec_…" description="Se usa para verificar los webhooks entrantes de Stripe." />
 
                                 <!-- actions -->
-                                <ButtonElement @click="emit('close')" name="cancel" button-label="Cancel" :secondary="true"
+                                <ButtonElement @click="emit('close')" name="cancel" button-label="Cancelar" :secondary="true"
                                     :columns="{ container: 6 }" :full="true" />
-                                <ButtonElement name="submit" button-label="Save settings" :submits="true" :full="true"
+                                <ButtonElement name="submit" button-label="Guardar configuración" :submits="true" :full="true"
                                     align="center" :columns="{ container: 6 }" />
                             </Vueform>
                         </DialogPanel>
@@ -222,16 +222,16 @@ const handleError = (error, details, form$) => {
     form$.messageBag.clear()
     switch (details.type) {
         case 'prepare':
-            form$.messageBag.append('Could not prepare form')
+            form$.messageBag.append('No se pudo preparar el formulario')
             break
         case 'submit':
             emit('error', error);
             break
         case 'cancel':
-            form$.messageBag.append('Request cancelled')
+            form$.messageBag.append('Solicitud cancelada')
             break
         case 'other':
-            form$.messageBag.append('Couldn\'t submit form')
+            form$.messageBag.append('No se pudo enviar el formulario')
             break
     }
 }

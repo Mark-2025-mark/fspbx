@@ -111,7 +111,7 @@
 
                                             <div
                                                 class="absolute bottom-full mb-1 hidden group-hover:block whitespace-nowrap bg-gray-800 text-white text-xs rounded py-1 px-2 z-10 shadow-lg">
-                                                Delivery Details
+                                                Detalles de entrega
                                                 <div
                                                     class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45">
                                                 </div>
@@ -145,11 +145,11 @@
                                             <div class="text-gray-400 text-sm "> {{ row.uuid }}</div>
                                         </div>
                                         <div class="flex gap-2">
-                                            <div class="text-gray-500 text-sm ">From: </div>
+                                            <div class="text-gray-500 text-sm ">De: </div>
                                             <div class="text-gray-400 text-sm "> {{ row.from }}</div>
                                         </div>
                                         <div class="flex gap-2">
-                                            <div class="text-gray-500 text-sm ">To: </div>
+                                            <div class="text-gray-500 text-sm ">Para: </div>
                                             <div class="text-gray-400 text-sm "> {{ row.to }}</div>
                                         </div>
                                         <div v-if="row.cc" class="flex gap-2">
@@ -161,7 +161,7 @@
                                             <div class="text-gray-400 text-sm "> {{ row.bcc }}</div>
                                         </div>
                                         <div v-if="row.sent_debug_info" class="flex gap-2">
-                                            <div class="text-gray-500 text-sm ">Debug: </div>
+                                            <div class="text-gray-500 text-sm ">Depuración: </div>
                                             <div class="text-gray-400 text-sm "> {{ row.sent_debug_info }}</div>
                                         </div>
 
@@ -198,35 +198,35 @@
 
 
     <ConfirmationModal :show="showDeleteConfirmationModal" @close="showDeleteConfirmationModal = false"
-        @confirm="confirmDeleteAction" :header="'Confirm Deletion'"
-        :text="'This action will permanently delete the selected hotel room(s). Are you sure you want to proceed?'"
-        :confirm-button-label="'Delete'" cancel-button-label="Cancel" />
+        @confirm="confirmDeleteAction" :header="'Confirmar eliminación'"
+        :text="'Esta acción eliminará permanentemente la(s) habitación(es) de hotel seleccionada(s). ¿Está seguro de que desea continuar?'"
+        :confirm-button-label="'Eliminar'" cancel-button-label="Cancelar" />
 
-    <AddEditItemModal :show="showDeliveryDetailsModal" header="Delivery Details" :loading="deliveryDetailsLoading"
+    <AddEditItemModal :show="showDeliveryDetailsModal" header="Detalles de entrega" :loading="deliveryDetailsLoading"
         custom-class="sm:max-w-4xl" body-class="max-h-[70vh] overflow-y-auto" @close="showDeliveryDetailsModal = false">
         <template #modal-body>
             <div v-if="deliveryDetails?.available" class="space-y-4">
                 <div class="grid gap-3 text-sm sm:grid-cols-2">
                     <div>
-                        <div class="text-xs font-medium uppercase tracking-wide text-gray-400">Provider</div>
+                        <div class="text-xs font-medium uppercase tracking-wide text-gray-400">Proveedor</div>
                         <div class="mt-1 text-gray-900">{{ deliveryDetails.provider }}</div>
                     </div>
                     <div>
-                        <div class="text-xs font-medium uppercase tracking-wide text-gray-400">Provider ID</div>
+                        <div class="text-xs font-medium uppercase tracking-wide text-gray-400">ID de proveedor</div>
                         <div class="mt-1 font-mono text-xs text-gray-700">{{ deliveryDetails.message_id }}</div>
                     </div>
                     <div>
-                        <div class="text-xs font-medium uppercase tracking-wide text-gray-400">Status</div>
-                        <div class="mt-1 text-gray-900">{{ deliveryDetails.status || 'Unknown' }}</div>
+                        <div class="text-xs font-medium uppercase tracking-wide text-gray-400">Estado</div>
+                        <div class="mt-1 text-gray-900">{{ deliveryDetails.status || 'Desconocido' }}</div>
                     </div>
                     <div>
-                        <div class="text-xs font-medium uppercase tracking-wide text-gray-400">Message Stream</div>
-                        <div class="mt-1 text-gray-900">{{ deliveryDetails.message_stream || 'Default' }}</div>
+                        <div class="text-xs font-medium uppercase tracking-wide text-gray-400">Flujo de mensajes</div>
+                        <div class="mt-1 text-gray-900">{{ deliveryDetails.message_stream || 'Predeterminado' }}</div>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="text-sm font-semibold text-gray-900">Events</h4>
+                    <h4 class="text-sm font-semibold text-gray-900">Eventos</h4>
                     <div v-if="deliveryDetails.events?.length" class="mt-2 divide-y divide-gray-200 rounded-md border border-gray-200">
                         <div v-for="(event, index) in deliveryDetails.events" :key="index" class="px-3 py-2 text-sm">
                             <div class="flex flex-wrap items-center justify-between gap-2">
@@ -237,7 +237,7 @@
                                 <div class="text-xs text-gray-500">{{ eventTimestamp(event) }}</div>
                             </div>
                             <div v-if="event.Recipient" class="mt-1 text-xs text-gray-500">
-                                Recipient: {{ event.Recipient }}
+                                Destinatario: {{ event.Recipient }}
                             </div>
                             <div v-if="eventDetailRows(event).length" class="mt-2 grid gap-2 sm:grid-cols-2">
                                 <div v-for="detail in eventDetailRows(event)" :key="detail.label"
@@ -248,16 +248,16 @@
                             </div>
                         </div>
                     </div>
-                    <p v-else class="mt-2 text-sm text-gray-500">No provider events were returned.</p>
+                    <p v-else class="mt-2 text-sm text-gray-500">No se devolvieron eventos del proveedor.</p>
                 </div>
 
                 <details>
-                    <summary class="cursor-pointer text-sm font-medium text-gray-700">Raw provider response</summary>
+                    <summary class="cursor-pointer text-sm font-medium text-gray-700">Respuesta cruda del proveedor</summary>
                     <pre class="mt-2 max-h-80 overflow-auto rounded-md bg-gray-900 p-3 text-xs text-gray-100">{{ prettyJson(deliveryDetails.raw) }}</pre>
                 </details>
             </div>
             <div v-else class="text-sm text-gray-600">
-                {{ deliveryDetails?.message || 'Delivery details are not available.' }}
+                {{ deliveryDetails?.message || 'Los detalles de entrega no están disponibles.' }}
             </div>
         </template>
     </AddEditItemModal>
@@ -349,14 +349,14 @@ const filterData = ref({
 const showDomainFilter = computed(() => props.domainOptions.length > 1);
 const showDomainColumn = computed(() => showDomainFilter.value);
 const domainFilterOptions = computed(() => [
-    { value: 'all', label: 'All domains' },
+    { value: 'all', label: 'Todos los dominios' },
     ...props.domainOptions,
 ]);
 const emailColumnCount = computed(() => showDomainColumn.value ? 6 : 5);
 
 const domainLabel = (row) => {
     if (!row.domain_uuid) {
-        return 'System';
+        return 'Sistema';
     }
 
     return row.domain?.domain_description || row.domain?.domain_name || '';
@@ -454,7 +454,7 @@ const bulkActions = computed(() => {
     if (props.permissions.user_destroy) {
         actions.push({
             id: 'bulk_delete',
-            label: 'Delete',
+            label: 'Eliminar',
             icon: 'TrashIcon'
         });
     }
